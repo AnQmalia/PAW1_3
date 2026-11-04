@@ -17,4 +17,16 @@
       document.body.style.backgroundColor = randomColor;
     });
   }
+
+  const ex2Text = document.getElementById("ex2_text");
+  const ex2Content = document.getElementById("ex2_content");
+
+  if (ex2Text && ex2Content) {
+    ex2Content.textContent = "Wpisano 0 znaków";
+
+    ex2Text.addEventListener("input", function () {
+      const length = ex2Text.value.length;
+      ex2Content.textContent = `Wpisano ${length} znaków`;
+    });
+  }
 })();
