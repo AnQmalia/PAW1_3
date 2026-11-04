@@ -29,4 +29,24 @@
       ex2Content.textContent = `Wpisano ${length} znaków`;
     });
   }
+
+  const ex6Button = document.getElementById("ex6_button");
+  const ex6Content = document.getElementById("ex6_content");
+
+  let timer = null;
+  let seconds = 0;
+
+  if (ex6Button && ex6Content) {
+    ex6Button.addEventListener("click", function () {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      } else {
+        timer = setInterval(function () {
+          seconds++;
+          ex6Content.textContent = seconds;
+        }, 1000);
+      }
+    });
+  }
 })();
